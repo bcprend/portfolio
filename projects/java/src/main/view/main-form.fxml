@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" styleClass="main-bg" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.controller.MainFormController">
+   <children>
+      <TabPane layoutX="15.0" layoutY="15.0" prefHeight="700.0" prefWidth="994.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Appointments">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="15.0" layoutY="57.0" prefHeight="550.0" prefWidth="964.0">
+                          <columns>
+                            <TableColumn prefWidth="93.0" text="Title" />
+                              <TableColumn prefWidth="126.0" text="Description" />
+                              <TableColumn prefWidth="54.0" text="Location" />
+                              <TableColumn prefWidth="129.0" text="Contact" />
+                              <TableColumn prefWidth="43.0" text="Type" />
+                              <TableColumn prefWidth="112.0" text="Start" />
+                              <TableColumn prefWidth="116.0" text="End" />
+                              <TableColumn prefWidth="125.0" text="Customer" />
+                              <TableColumn prefWidth="92.0" text="User" />
+                            <TableColumn prefWidth="63.0" text="ID" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="15.0" layoutY="615.0" mnemonicParsing="false" text="Add New">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button layoutX="102.0" layoutY="615.0" mnemonicParsing="false" text="Edit">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button layoutX="157.0" layoutY="615.0" mnemonicParsing="false" text="Delete">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <ChoiceBox fx:id="appointmentChoiceBox" layoutX="792.0" layoutY="14.0" prefWidth="150.0" />
+                        <Label fx:id="testLabel" layoutX="604.0" layoutY="18.0" prefHeight="17.0" prefWidth="178.0" text="Select Date View:" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Customers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView layoutX="15.0" layoutY="57.0" prefHeight="550.0" prefWidth="964.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="ID" />
+                            <TableColumn prefWidth="221.0" text="Name" />
+                              <TableColumn prefWidth="317.0" text="Address" />
+                              <TableColumn prefWidth="167.0" text="Phone Number" />
+                              <TableColumn prefWidth="93.0" text="State/Province" />
+                              <TableColumn prefWidth="82.0" text="Postal Code" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="15.0" layoutY="615.0" mnemonicParsing="false" text="Add New">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button layoutX="102.0" layoutY="615.0" mnemonicParsing="false" text="Edit">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button layoutX="157.0" layoutY="615.0" mnemonicParsing="false" text="Delete">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Reports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="950.0" layoutY="729.0" mnemonicParsing="false" onAction="#onLogOutClick" text="Log Out" />
+      <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="1024.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#onMinClick" pickOnBounds="true" preserveRatio="true" styleClass="action-image">
+               <image>
+                  <Image url="@../img/ico_minimize.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="10.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="25.0" layoutX="1009.0" onMouseClicked="#onCloseXClick" pickOnBounds="true" preserveRatio="true" styleClass="action-image">
+               <image>
+                  <Image url="@../img/ico_close.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="5.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="600.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/logo_white.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

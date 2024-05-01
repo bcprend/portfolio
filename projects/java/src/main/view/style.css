@@ -1,0 +1,114 @@
+/**
+To target specific object, use #fx:id{}
+
+To target entire class, use .className{}
+
+*/
+
+/*
+.button {
+-fx-background-color: #090a0c,
+    linear-gradient(#38424b 0%, #1f2429 20%, #191d22 100%),
+    linear-gradient(#20262b, #191d22),
+    radial-gradient(center 50% 0%,
+    radius 100%, rgba(114, 131, 148, 0.9), rgba(255,255,255,0));
+-fx-background-radius: 5,4,3,5;
+-fx-background-insets: 0,1,2,0;
+-fx-text-fill: white;
+-fx-effect: dropshadow( three-pass-box, rgba(0,0,0,0.6), 5, 0.0, 0, 1);
+-fx-font-family: "Arial";
+-fx-text-fill: linear-gradient(white, #d0d0d0);
+-fx-font-size: 12px;
+-fx-padding: 10 20 10 20;
+-fx-cursor: hand;
+}
+*/
+
+.button {
+    -fx-background-color: #090a0c,
+    linear-gradient(rgba(255,255,255,0.3), rgba(114, 131, 148, 0.0));
+    -fx-background-radius: 0,0,0,0;
+    -fx-background-insets: 0,0,0,0;
+    -fx-border-color: white;
+    -fx-border-width: 1px;
+    -fx-text-fill: white;
+}
+
+.button:hover {
+    -fx-cursor:hand;
+}
+
+.root{
+    -fx-background-color:
+        linear-gradient(from 0% 0% to 100% 100%, #8ca1ed, #71c0d9, #6598e6),
+        radial-gradient(center 85% 5%,
+        radius 40%, rgba(151, 61, 184, 0.5), rgba(140, 54, 173, 0.1)),
+        radial-gradient(center 40% 95%,
+        radius 40%, rgba(79, 219, 217, 0.3), rgba(140, 161, 237, 0.1));
+}
+
+.main-bg{
+    -fx-background-color:rgb(50, 53, 56);
+}
+
+.tab-pane {
+    -fx-background-color: transparent;
+    -fx-tab-min-width: 120px;
+    -fx-tab-max-width: 120px;
+	-fx-tab-min-height: 40px;
+	-fx-tab-max-height: 40px;
+}
+
+.tab-content-area {
+    -fx-background-color: #38424b,
+    linear-gradient(rgba(114, 131, 148, 0.9), rgba(255,255,255,0.0));
+    -fx-background-radius: 0,0,0,0;
+    -fx-background-insets: 0,0,0,0;
+}
+
+.tab-header-background {
+    -fx-background-color: transparent;
+}
+
+.tab {
+    -fx-background-color: #38424b;
+    -fx-background-radius: 0,0,0,0;
+    -fx-background-insets: 0,0,0,0;
+}
+
+.tab:hover {
+    -fx-cursor:hand;
+}
+
+.tab:selected {
+    -fx-background-color: #38424b,
+    linear-gradient(rgba(255,255,255,0.1), rgba(114, 131, 148, 0.9));
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+.tab-label {
+	-fx-text-fill: white;
+	-fx-padding: 0 10 0 10;
+}
+
+
+.tab-pane:top *.tab-header-area {
+	-fx-padding: 0 0 0 0;
+}
+
+
+.tab-pane:focused .tab-header-area .headers-region .tab:selected .focus-indicator {
+ 	-fx-border-width: 0;
+	-fx-border-insets: 0 0 0 0;
+	-fx-border-radius: 0;
+}
+
+.table-view {
+    -fx-background-color: rgb(128, 147, 166);
+}
+
+.action-image:hover {
+    -fx-cursor:hand;
+}
+

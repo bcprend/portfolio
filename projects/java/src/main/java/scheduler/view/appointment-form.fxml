@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="600.0" prefWidth="810.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.scheduler.controller.AppointmentFormController">
+   <children>
+      <Label fx:id="labelAppointmentHeader" contentDisplay="CENTER" layoutX="35.0" layoutY="35.0" prefHeight="27.0" prefWidth="438.0" text="Appointment">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="75.0" text="Appointment ID:" />
+      <Label layoutX="40.0" layoutY="135.0" text="Title" />
+      <Label layoutX="290.0" layoutY="375.0" text="Description" />
+      <Label layoutX="40.0" layoutY="405.0" text="Contact" />
+      <Label layoutX="40.0" layoutY="315.0" text="Type" />
+      <Label layoutX="290.0" layoutY="135.0" text="Date" />
+      <Label layoutX="540.0" layoutY="135.0" text="Customer" />
+      <Label layoutX="540.0" layoutY="315.0" text="User" />
+      <Line endX="630.0" layoutX="140.0" layoutY="65.0" startX="-100.0" />
+      <Label fx:id="labelAppointmentId" layoutX="135.0" layoutY="75.0" text="System-generated">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="290.0" layoutY="215.0" text="Start" />
+      <Label layoutX="290.0" layoutY="295.0" text="End" />
+      <TextField fx:id="fieldTitle" layoutX="40.0" layoutY="155.0" prefHeight="30.0" prefWidth="170.0" />
+      <TextField fx:id="fieldLocation" layoutX="40.0" layoutY="245.0" prefHeight="30.0" prefWidth="170.0" />
+      <ComboBox fx:id="comboType" layoutX="40.0" layoutY="335.0" prefHeight="30.0" prefWidth="170.0" promptText="Select Type" />
+      <ComboBox fx:id="comboContact" layoutX="40.0" layoutY="425.0" prefHeight="30.0" prefWidth="170.0" promptText="Select contact" />
+      <DatePicker fx:id="datePicker" layoutX="290.0" layoutY="155.0" prefHeight="30.0" prefWidth="170.0" />
+      <ComboBox fx:id="comboStartMeridiem" layoutX="400.0" layoutY="235.0" prefHeight="30.0" prefWidth="61.0" />
+      <ComboBox fx:id="comboEndMeridiem" layoutX="400.0" layoutY="315.0" prefHeight="30.0" prefWidth="61.0" />
+      <TextArea fx:id="fieldDescription" layoutX="290.0" layoutY="395.0" prefHeight="60.0" prefWidth="170.0" wrapText="true" />
+      <TableView fx:id="tableCustomer" layoutX="540.0" layoutY="155.0" prefHeight="120.0" prefWidth="230.0">
+        <columns>
+          <TableColumn fx:id="colCustomerId" resizable="false" text="Customer ID" />
+          <TableColumn fx:id="colCustomerName" prefWidth="135.0" resizable="false" text="Name" />
+        </columns>
+      </TableView>
+      <TableView fx:id="tableUser" layoutX="540.0" layoutY="335.0" prefHeight="120.0" prefWidth="230.0">
+        <columns>
+          <TableColumn fx:id="colUserId" resizable="false" text="User ID" />
+          <TableColumn fx:id="colUserName" prefWidth="135.0" resizable="false" text="Name" />
+        </columns>
+      </TableView>
+      <Button fx:id="buttonCancel" layoutX="244.0" layoutY="520.0" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+      <Button fx:id="buttonSave" layoutX="520.0" layoutY="520.0" mnemonicParsing="false" onAction="#onSaveClick" text="Save" />
+      <Label layoutX="40.0" layoutY="225.0" text="Location" />
+      <Label fx:id="labelError" alignment="BOTTOM_CENTER" contentDisplay="CENTER" layoutX="390.0" layoutY="465.0" prefHeight="50.0" prefWidth="300.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <ComboBox fx:id="comboStartMinute" layoutX="345.0" layoutY="235.0" prefHeight="30.0" prefWidth="60.0" style="-fx-font-size: 12;" />
+      <ComboBox fx:id="comboStartHour" layoutX="290.0" layoutY="235.0" prefHeight="30.0" prefWidth="60.0" style="-fx-font-size: 12;" />
+      <ComboBox fx:id="comboEndMinute" layoutX="345.0" layoutY="315.0" prefHeight="30.0" prefWidth="60.0" style="-fx-font-size: 12;" />
+      <ComboBox fx:id="comboEndHour" layoutX="290.0" layoutY="315.0" prefHeight="30.0" prefWidth="60.0" style="-fx-font-size: 12;" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.scheduler.controller.CustomerFormController">
+   <children>
+      <Label fx:id="labelCustomerHeader" layoutX="35.0" layoutY="35.0" prefHeight="27.0" prefWidth="460.0" text="Customer">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="40.0" layoutY="75.0" text="Customer ID:" />
+      <Label layoutX="40.0" layoutY="135.0" text="Name" />
+      <Label layoutX="40.0" layoutY="315.0" text="Address" />
+      <Label layoutX="290.0" layoutY="135.0" text="Phone Number" />
+      <Label layoutX="40.0" layoutY="225.0" text="Country" />
+      <Label layoutX="290.0" layoutY="225.0" text="State/Province" />
+      <Label layoutX="380.0" layoutY="315.0" text="Postal Code" />
+      <TextField fx:id="fieldName" layoutX="40.0" layoutY="155.0" prefHeight="30.0" prefWidth="170.0" />
+      <TextField fx:id="fieldPhone" layoutX="290.0" layoutY="155.0" prefHeight="30.0" prefWidth="170.0" />
+      <ComboBox fx:id="comboCountry" layoutX="40.0" layoutY="245.0" onAction="#onCountrySelected" prefHeight="30.0" prefWidth="170.0" promptText="Select country" />
+      <ComboBox fx:id="comboDivision" layoutX="290.0" layoutY="245.0" prefHeight="30.0" prefWidth="170.0" promptText="Select state/province" />
+      <TextField fx:id="fieldAddress" layoutX="40.0" layoutY="335.0" prefHeight="30.0" prefWidth="300.0" />
+      <TextField fx:id="fieldPost" layoutX="380.0" layoutY="335.0" prefHeight="30.0" prefWidth="80.0" />
+      <Button fx:id="buttonCancel" layoutX="100.0" layoutY="410.0" mnemonicParsing="false" onAction="#onCancelClick" text="Cancel" />
+      <Button fx:id="buttonSave" layoutX="350.0" layoutY="410.0" mnemonicParsing="false" onAction="#onSaveClick" text="Save" />
+      <Line endX="320.0" layoutX="140.0" layoutY="65.0" startX="-100.0" />
+      <Label fx:id="labelCustomerId" layoutX="115.0" layoutY="75.0" text="System-generated ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label fx:id="labelError" alignment="CENTER" layoutX="207.0" layoutY="383.0" prefHeight="17.0" prefWidth="293.0" textFill="RED" />
+   </children>
+</AnchorPane>

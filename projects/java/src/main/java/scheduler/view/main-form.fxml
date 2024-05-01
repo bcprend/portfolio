@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" styleClass="main-bg" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.scheduler.controller.MainFormController">
+   <children>
+      <TabPane layoutX="15.0" layoutY="15.0" prefHeight="700.0" prefWidth="994.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Appointments">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableSchedule" layoutX="15.0" layoutY="57.0" prefHeight="550.0" prefWidth="964.0">
+                          <columns>
+                              <TableColumn fx:id="colApptId" editable="false" prefWidth="40.0" resizable="false" text="ID" />
+                            <TableColumn fx:id="colApptTitle" editable="false" prefWidth="83.0" resizable="false" text="Title" />
+                              <TableColumn fx:id="colApptDescription" editable="false" prefWidth="101.0" resizable="false" text="Description" />
+                              <TableColumn fx:id="colApptDate" editable="false" resizable="false" text="Date" />
+                              <TableColumn fx:id="colApptStart" editable="false" prefWidth="78.0" resizable="false" sortable="false" text="Start" />
+                              <TableColumn fx:id="colApptEnd" editable="false" prefWidth="78.0" resizable="false" sortable="false" text="End" />
+                              <TableColumn fx:id="colApptLocation" editable="false" prefWidth="86.0" resizable="false" text="Location" />
+                              <TableColumn fx:id="colApptType" editable="false" prefWidth="114.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="colApptContact" editable="false" prefWidth="105.0" resizable="false" text="Contact" />
+                              <TableColumn fx:id="colApptCustomer" editable="false" prefWidth="128.0" resizable="false" text="Customer" />
+                              <TableColumn fx:id="colApptUser" editable="false" prefWidth="60.0" resizable="false" text="User" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="15.0" layoutY="615.0" mnemonicParsing="false" onAction="#onAddAppointmentClick" text="Add New">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button layoutX="102.0" layoutY="615.0" mnemonicParsing="false" onAction="#onEditAppointmentClick" text="Edit">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button layoutX="157.0" layoutY="615.0" mnemonicParsing="false" onAction="#onDeleteAppointmentClick" text="Delete">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Label fx:id="testLabel" layoutX="800.0" layoutY="18.0" prefHeight="17.0" prefWidth="72.0" text="Date Range:" />
+                        <ComboBox fx:id="comboBoxDateRange" layoutX="870.0" layoutY="14.0" prefHeight="30.0" prefWidth="110.0" />
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Customers">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableCustomer" layoutX="15.0" layoutY="57.0" prefHeight="550.0" prefWidth="964.0">
+                          <columns>
+                            <TableColumn fx:id="colCustId" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="colCustName" prefWidth="200.0" text="Name" />
+                              <TableColumn fx:id="colCustPhone" prefWidth="125.0" text="Phone Number" />
+                              <TableColumn fx:id="colCustAddress" prefWidth="245.0" text="Address" />
+                              <TableColumn fx:id="colCustState" prefWidth="125.0" text="State/Province" />
+                              <TableColumn fx:id="colCustCountry" prefWidth="100.0" text="Country" />
+                              <TableColumn fx:id="colCustPost" text="Postal Code" />
+                          </columns>
+                        </TableView>
+                        <Button layoutX="15.0" layoutY="615.0" mnemonicParsing="false" onAction="#onAddCustomerClick" text="Add New">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button layoutX="102.0" layoutY="615.0" mnemonicParsing="false" onAction="#onEditCustomerClick" text="Edit">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                        <Button layoutX="157.0" layoutY="615.0" mnemonicParsing="false" onAction="#onDeleteCustomerClick" text="Delete">
+                           <font>
+                              <Font size="13.0" />
+                           </font></Button>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="Reports">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="705.0" layoutY="40.0" text="Month/Type Report" />
+                        <ComboBox fx:id="comboBoxType" layoutX="705.0" layoutY="60.0" onAction="#getMonthTypeReport" prefWidth="135.0" promptText="Select type" />
+                        <ComboBox fx:id="comboBoxMonth" layoutX="845.0" layoutY="60.0" onAction="#getMonthTypeReport" prefWidth="135.0" promptText="Select month" />
+                        <Label layoutX="15.0" layoutY="40.0" text="Appointments by Contact Report" />
+                        <ComboBox fx:id="comboBoxContact" layoutX="15.0" layoutY="60.0" onAction="#getContactReport" prefWidth="150.0" promptText="Select contact" />
+                        <TableView fx:id="tableContactReport" layoutX="15.0" layoutY="100.0" prefHeight="225.0" prefWidth="650.0">
+                          <columns>
+                            <TableColumn fx:id="colContactId" prefWidth="40.0" resizable="false" text="ID" />
+                            <TableColumn fx:id="colContactTitle" prefWidth="100.0" resizable="false" text="Title" />
+                              <TableColumn fx:id="colContactType" prefWidth="85.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="colContactDescription" prefWidth="100.0" resizable="false" text="Description" />
+                              <TableColumn fx:id="colContactDate" prefWidth="75.0" resizable="false" text="Date" />
+                              <TableColumn fx:id="colContactStart" prefWidth="65.0" resizable="false" text="Start" />
+                              <TableColumn fx:id="colContactEnd" prefWidth="65.0" resizable="false" text="End" />
+                              <TableColumn fx:id="colContactCustomer" prefWidth="105.0" resizable="false" text="Customer" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="15.0" layoutY="360.0" text="Appointments by Customer Report" />
+                        <ComboBox fx:id="comboBoxCustomer" layoutX="15.0" layoutY="380.0" onAction="#getCustomerReport" prefWidth="150.0" promptText="Select customer" />
+                        <TableView fx:id="tableCustomerReport" layoutX="15.0" layoutY="420.0" prefHeight="225.0" prefWidth="650.0">
+                           <columns>
+                              <TableColumn fx:id="colCustomerId" prefWidth="40.0" resizable="false" text="ID" />
+                              <TableColumn fx:id="colCustomerTitle" prefWidth="100.0" resizable="false" text="Title" />
+                              <TableColumn fx:id="colCustomerType" prefWidth="85.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="colCustomerDescription" prefWidth="100.0" resizable="false" text="Description" />
+                              <TableColumn fx:id="colCustomerDate" prefWidth="75.0" resizable="false" text="Date" />
+                              <TableColumn fx:id="colCustomerStart" prefWidth="65.0" resizable="false" text="Start" />
+                              <TableColumn fx:id="colCustomerEnd" prefWidth="65.0" resizable="false" text="End" />
+                              <TableColumn fx:id="colCustomerContact" prefWidth="105.0" resizable="false" text="Contact" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="tableTypeReport" layoutX="705.0" layoutY="100.0" prefHeight="225.0" prefWidth="275.0">
+                           <columns>
+                              <TableColumn fx:id="colTypeMonth" prefWidth="95.0" resizable="false" text="Month" />
+                              <TableColumn fx:id="colTypeType" prefWidth="98.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="colTypeCount" prefWidth="65.0" resizable="false" text="Total" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="705.0" layoutY="360.0" text="Average Appointment Length by Type Report" />
+                        <ComboBox fx:id="comboBoxAvgType" layoutX="705.0" layoutY="380.0" onAction="#getAverageLengthReport" prefWidth="135.0" promptText="Select Type" />
+                        <TableView fx:id="tableAverageLengthReport" layoutX="705.0" layoutY="420.0" prefHeight="225.0" prefWidth="275.0">
+                           <columns>
+                              <TableColumn fx:id="colAverageType" prefWidth="102.0" resizable="false" text="Type" />
+                              <TableColumn fx:id="colAverageTotal" editable="false" prefWidth="38.0" resizable="false" text="Total" />
+                              <TableColumn fx:id="colAverageLength" prefWidth="120.0" resizable="false" text="Avg Length (hours)" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+      <Button layoutX="950.0" layoutY="729.0" mnemonicParsing="false" onAction="#onLogOutClick" text="Log Out" />
+      <HBox alignment="TOP_RIGHT" prefHeight="25.0" prefWidth="1024.0">
+         <children>
+            <ImageView fitHeight="150.0" fitWidth="25.0" onMouseClicked="#onMinClick" pickOnBounds="true" preserveRatio="true" styleClass="action-image">
+               <image>
+                  <Image url="@../../../resources/img/ico_minimize.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="10.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="25.0" layoutX="1009.0" onMouseClicked="#onCloseXClick" pickOnBounds="true" preserveRatio="true" styleClass="action-image">
+               <image>
+                  <Image url="@../../../resources/img/ico_close.png" />
+               </image>
+               <HBox.margin>
+                  <Insets right="5.0" top="5.0" />
+               </HBox.margin>
+            </ImageView>
+         </children></HBox>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="600.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../resources/img/logo_white.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
