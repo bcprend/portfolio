@@ -339,6 +339,7 @@ body:not(.user-is-tabbing) a:focus {
     display: flex;
     justify-content: flex-end;
     padding: var(--gutter-normal) 0;
+	margin-bottom: 80px;
 }
 
 .nav__items {
@@ -411,6 +412,7 @@ body:not(.user-is-tabbing) a:focus {
     background-position: center;
     background-attachment: fixed;
     font-size: var(--font-size-normal);
+	padding-top: 60px;
 }
 
 .header__text {
